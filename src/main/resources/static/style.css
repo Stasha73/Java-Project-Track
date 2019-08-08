@@ -1,0 +1,36 @@
+h1 {
+color: aquamarine;
+background-color: DodgerBlue;
+text-align: center;
+font-size: 100px;
+font-family: Pristina;
+border: 5px solid aqua;
+border-radius: 12px;
+text-transform: uppercase
+}
+.cursive{
+  font-family: cursive;
+}
+
+ body {
+ background-color: almond;
+}
+
+div {
+background-color: mistyrose;
+font-size: 30px;
+text-align: center;
+border: 5px solid pink;
+border-radius: 12px;
+font: Pristina;
+
+}
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+}
+
