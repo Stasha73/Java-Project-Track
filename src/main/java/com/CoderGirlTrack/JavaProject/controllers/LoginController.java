@@ -1,4 +1,8 @@
 package com.CoderGirlTrack.JavaProject.controllers;
 
-public class LogiinController {
+import org.springframework.stereotype.Controller;
+
+    @Controller
+
+public class LoginController {
 }

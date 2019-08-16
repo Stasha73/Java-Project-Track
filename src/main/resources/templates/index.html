@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title th:text="${title}">Travel</title>
+    <meta charset="UTF-8"; http-equiv="Content-Type" content="text/html">
+    <title>Travel</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 
 </head>
 <body>
 <header>
 
-    <h1 th:text="${title}">Party of One</h1>
+    <h1>Party of One Travels</h1>
 </header>
 <div>
 <p class="description">
@@ -23,8 +23,20 @@ connect with other women who hunger to see the world.
 <br>
 <br>
 <br>
+<form action="/action_page.php" method="get">
 
+    <button type="submit">CREATE USER PROFILE</button>
+    <br>
+    <button type="submit" formtarget="_blank"> LOGIN</button>
+</form>
 
+<br>
+<br>
+<br>
+
+<br>
+<br>
+<br>
 
 <img src="https://www.worldatlas.com/img/areamap/continent/caribbean_map.gif" alt="Caribbean Islands" >
 
