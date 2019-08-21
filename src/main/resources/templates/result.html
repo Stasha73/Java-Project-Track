@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" http-equiv="Content-Type" content="text/html">
+    <title>Getting Started</title>
+</head>
+<body>
+<h1>User Profile</h1>
+<p th:text="'Profile Name: ' + ${userProfile.profileName}" />
+<p th:text="'First and Last Name: ' + ${userProfile.firstName} + ${userProfile.lastName}" />
+<p th:text="'Email:   ' + ${userProfile.email}" />
+<a href="/login">Submit another message</a>
+</body>
+</html>

@@ -1,47 +1,51 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"; http-equiv="Content-Type" content="text/html">
-    <title>Travel</title>
+    <title th:text="${title}">Getting Started:</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 
 </head>
-<body>
-<header>
 
+<header>
     <h1>Party of One Travels</h1>
 </header>
+<body>
 <div>
 <p class="description">
 Welcome to Party of One! This website is created as a resource for women who love
 to travel. You can set up a profile where you can post recommendations and provide
 helpful travel tips for women unafraid to travel the world by themselves.  You can
 connect with other women who hunger to see the world.
-
 </p>
 </div>
 <br>
 <br>
 <br>
-<form action="/action_page.php" method="get">
 
-    <button type="submit">CREATE USER PROFILE</button>
-    <br>
-    <button type="submit" formtarget="_blank"> LOGIN</button>
+<p> Visitors to the website can create a profile in order to post helpful tips</p>
+<br>
+
+<h2 >Create User Profile</h2>
+<div>
+<form action="#" th:action="@{/login}" th:object="${userProfile}" method="post">
+    <p>Profile Name : <input type="text" th:field="*{profileName}"/></p>
+    <p>First Name   :  <input type="text" th:field="*{firstName}" /></p>
+    <p>Last Name    : <input type="text"  th:field="*{lastName}" /></p>
+    <p>Email   :  <input type="text" th:field="*{email}" /></p>
+    <p><input type="submit" value="SUBMIT"/></p>
+    <p>By creating an account you agree to our <a href="#">Terms & Privacy</a></p>
 </form>
+</div>
 
-<br>
-<br>
-<br>
-
-<br>
-<br>
 <br>
 
 <img src="https://www.worldatlas.com/img/areamap/continent/caribbean_map.gif" alt="Caribbean Islands" >
 
 
-    <footer>
+
+
+<footer>
     <p>Posted by Stacie Ray</p>
     <p> August 1, 2019</p>
     <p> Contact information: <a href="73@mailto:Taarah73@gmail.com">Taarah73@gmail.com</a>

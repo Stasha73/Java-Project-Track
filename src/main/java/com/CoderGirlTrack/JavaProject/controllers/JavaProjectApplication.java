@@ -1,4 +1,12 @@
 package com.CoderGirlTrack.JavaProject.controllers;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-public class JaveProjectApplication {
+@SpringBootApplication
+
+public class JavaProjectApplication {
+    public static void main(String[] args){
+        SpringApplication.run(JavaProjectApplication.class,args);
+    }
+
 }
