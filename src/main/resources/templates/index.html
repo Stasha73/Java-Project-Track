@@ -29,10 +29,12 @@ connect with other women who hunger to see the world.
 <h2 >Create User Profile</h2>
 <div>
 <form action="#" th:action="@{/login}" th:object="${userProfile}" method="post">
-    <p>Profile Name : <input type="text" th:field="*{profileName}"/></p>
+    <p>Profile Name : <input type="text"  th:field="*{profileName}"/></p>
     <p>First Name   :  <input type="text" th:field="*{firstName}" /></p>
-    <p>Last Name    : <input type="text"  th:field="*{lastName}" /></p>
-    <p>Email   :  <input type="text" th:field="*{email}" /></p>
+    <p>Last Name    : <input type="text" th:field="*{lastName}" /></p>
+    <p>Password : <input type="text" th:field="*{password}" /></p>
+    <p>Email   :  <input type="text"  th:field="*{email}" /></p>
+
     <p><input type="submit" value="SUBMIT"/></p>
     <p>By creating an account you agree to our <a href="#">Terms & Privacy</a></p>
 </form>

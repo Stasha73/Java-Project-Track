@@ -1,0 +1,71 @@
+2019-08-27 21:45:21 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Table "CATS" not found; SQL statement:
+INSERT INTO my_schema.cats values (1, 'Fluffy') [42102-197]
+2019-08-27 21:45:21 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Table "CATS" not found; SQL statement:
+INSERT INTO my_schema.cats values (2, 'Gato') [42102-197]
+2019-08-27 21:45:21 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Table "CATS" not found; SQL statement:
+INSERT INTO my_schema.cats values(3, 'Roscoe') [42102-197]
+2019-08-27 21:50:14 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM INFORMATION_SCHEMA.TABLES 
+INSERT INTO[*] MY_SCHEMA.CATS VALUES (1, 'Fluffy') "; SQL statement:
+SELECT * FROM INFORMATION_SCHEMA.TABLES 
+INSERT INTO my_schema.cats values (1, 'Fluffy') [42000-197]
+2019-08-27 21:50:14 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "CATS" not found; SQL statement:
+INSERT INTO my_schema.cats values (2, 'Gato') [42102-197]
+2019-08-27 21:50:14 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "CATS" not found; SQL statement:
+INSERT INTO my_schema.cats values (3, 'Roscoe') [42102-197]
+2019-08-27 21:51:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM INFORMATION_SCHEMA.TABLES 
+INSERT INTO[*] MY_SCHEMA.CATS VALUES (1, 'Fluffy') "; SQL statement:
+SELECT * FROM INFORMATION_SCHEMA.TABLES 
+INSERT INTO my_schema.cats values (1, 'Fluffy') [42000-197]
+2019-08-27 21:51:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "CATS" not found; SQL statement:
+INSERT INTO my_schema.cats values (2, 'Gato') [42102-197]
+2019-08-27 21:51:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "CATS" not found; SQL statement:
+INSERT INTO my_schema.cats values (3, 'Roscoe') [42102-197]
+2019-08-27 21:55:10 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM INFORMATION_SCHEMA.TABLES 
+INSERT INTO[*] MY_SCHEMA.CATS VALUES (1, 'Fluffy') "; SQL statement:
+SELECT * FROM INFORMATION_SCHEMA.TABLES 
+INSERT INTO my_schema.cats values (1, 'Fluffy') [42000-197]
+2019-08-27 21:55:10 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "CATS" not found; SQL statement:
+INSERT INTO my_schema.cats values (2, 'Gato') [42102-197]
+2019-08-27 21:55:10 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "CATS" not found; SQL statement:
+INSERT INTO my_schema.cats values (3, 'Roscoe') [42102-197]
+2019-08-27 21:55:11 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM INFORMATION_SCHEMA.TABLES 
+INSERT INTO[*] MY_SCHEMA.CATS VALUES (1, 'Fluffy') "; SQL statement:
+SELECT * FROM INFORMATION_SCHEMA.TABLES 
+INSERT INTO my_schema.cats values (1, 'Fluffy') [42000-197]
+2019-08-27 21:55:11 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "CATS" not found; SQL statement:
+INSERT INTO my_schema.cats values (2, 'Gato') [42102-197]
+2019-08-27 21:55:11 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "CATS" not found; SQL statement:
+INSERT INTO my_schema.cats values (3, 'Roscoe') [42102-197]
+2019-08-27 21:56:06 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "CATS" not found; SQL statement:
+INSERT INTO my_schema.cats values (1, 'Fluffy') [42102-197]
+2019-08-27 21:56:06 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "CATS" not found; SQL statement:
+INSERT INTO my_schema.cats values (2, 'Gato') [42102-197]
+2019-08-27 21:56:06 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "CATS" not found; SQL statement:
+INSERT INTO my_schema.cats values (3, 'Roscoe') [42102-197]
+2019-08-27 21:56:27 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "CATS" not found; SQL statement:
+INSERT INTO my_schema.cats values (1, 'Fluffy') [42102-197]
+2019-08-27 21:56:27 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "CATS" not found; SQL statement:
+INSERT INTO my_schema.cats values (2, 'Gato') [42102-197]
+2019-08-27 21:56:27 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "CATS" not found; SQL statement:
+INSERT INTO my_schema.cats values (3, 'Roscoe') [42102-197]

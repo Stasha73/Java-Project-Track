@@ -17,7 +17,8 @@ public class HelloController {
 
     @GetMapping("/login")
     public String displayUserProfile(Model model) {
-        model.addAttribute("userProfile", new UserProfile());
+        model.addAttribute("userProfile",
+                new UserProfile());
 
         return "index";
     }

@@ -4,6 +4,7 @@ public class UserProfile {
     private String profileName;
     private String firstName;
     private String lastName;
+    private String password;
     private String email;
 
     //data needed to create login profile
@@ -38,6 +39,10 @@ public class UserProfile {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+
+    public String getPassword() {return password;}
+
+    public void setPassword(String password) { this.password = password; }
 
     public String getEmail() {
         return email;
