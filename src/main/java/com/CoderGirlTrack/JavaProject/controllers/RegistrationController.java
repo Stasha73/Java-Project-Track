@@ -1,7 +1,7 @@
 package com.CoderGirlTrack.JavaProject.controllers;
 
 
-import com.CoderGirlTrack.JavaProject.controllers.models.UserProfile;
+import com.CoderGirlTrack.JavaProject.models.UserProfile;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("")
 //Root path: /welcome
 
-public class HelloController {
+public class RegistrationController {
 
-    @GetMapping("/login")
+    @GetMapping("/register")
     public String displayUserProfile(Model model) {
         model.addAttribute("userProfile",
                 new UserProfile());
@@ -23,10 +23,14 @@ public class HelloController {
         return "index";
     }
 
-    @PostMapping("/login")
+    @PostMapping("/register")
     public String processUserProfile(@ModelAttribute UserProfile  userProfile ) {
     return "result";
 
 
+    }
+    @GetMapping("")
+    public String index (Model model){
+        return displayUserProfile(model);
     }
 }
