@@ -25,7 +25,7 @@ public class RegistrationController {
 
     @PostMapping("/register")
     public String processUserProfile(@ModelAttribute UserProfile  userProfile ) {
-    return "result";
+    return "user_results";
 
 
     }
