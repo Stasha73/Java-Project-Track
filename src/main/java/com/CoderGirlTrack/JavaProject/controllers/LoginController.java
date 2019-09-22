@@ -10,20 +10,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 //mapping created for login
 @Controller
-@RequestMapping(" ")
+@RequestMapping("/login.html ")
 
 public class LoginController {
-    @GetMapping("/login")
+    @GetMapping("")
     public String displayLogin(Model model) {
         model.addAttribute("login",
                 new Login());
 
+
         return "login";
     }
-    @PostMapping(value = "/login")
+    @PostMapping("/login.html")
     public String processLogin(@ModelAttribute Login login ){
-        return "loginResult";
+        return "returning_users";
     }
-
+    @GetMapping("/login.html")
+    public String index (Model model){
+        return displayLogin(model);
+    }
 
 }

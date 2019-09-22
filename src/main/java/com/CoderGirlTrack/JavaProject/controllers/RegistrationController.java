@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("")
-//Root path: /welcome
+//Root path: /register
 
 public class RegistrationController {
 
@@ -27,10 +27,17 @@ public class RegistrationController {
     public String processUserProfile(@ModelAttribute UserProfile  userProfile ) {
     return "user_results";
 
-
     }
     @GetMapping("")
     public String index (Model model){
         return displayUserProfile(model);
     }
+//displays the home page
+
+    @RequestMapping(value = "/redirect", method = RequestMethod.GET)
+    public String redirect() {
+        return "redirect:finalPage";
+    }
 }
+
+

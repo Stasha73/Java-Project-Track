@@ -4,6 +4,13 @@ public class Login {
     private String profileName;
     private String password;
 
+    public Login(){}
+
+    public Login(String profileName, String password){
+        this.profileName = profileName;
+        this.password = password;
+    }
+
     public String getProfileName(){
         return profileName;
     }

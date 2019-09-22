@@ -8,9 +8,17 @@
 </head>
 
 <header>
+    <div class="header">
+        <a href="/login">User Login</a>
+        <a href=" ">About</a>
+        <a href="/search">Search</a>
+    </div>
     <h1>Party of One Travels</h1>
 </header>
 <body>
+
+<br>
+<br>
 <div>
 <p class="description">
 Welcome to Party of One! This website is created as a resource for women who love
@@ -30,23 +38,33 @@ connect with other women who hunger to see the world.
 <div>
 <form action="#" th:action="@{/register}" th:object="${userProfile}" method="post">
     <p>Profile Name : <input type="text" th:field="*{profileName}"/></p>
-    <p>First Name   :  <input type="text" th:field="*{firstName}" /></p>
-    <p>Last Name    : <input type="text" th:field="*{lastName}" /></p>
+    <p>First Name   : <input  type="text" th:field="*{firstName}"/></p>
+    <p>Last Name : <input type="text" th:field="*{lastName}"/></p>
     <p>Password : <input type="text" th:field="*{password}" /></p>
     <p>Email   :  <input type="text"  th:field="*{email}" /></p>
 
     <p><input type="submit" value="SUBMIT"/></p>
-    <p>By creating an account you agree to our <a href="#">Terms & Privacy</a></p>
+    <br>
+    <br>
+        <p>By creating an account you agree to our <a href="#">Terms & Privacy</a></p>
 </form>
 </div>
 
+<h2> Returning Travelers</h2>
+
+    <br>
+
+<a href="login.html">
+    <button>LOGIN</button>
+</a>
+
+
+<<!--img src="https://www.worldatlas.com/img/areamap/continent/caribbean_map.gif" alt="Caribbean Islands" -->
+
+
+
 <br>
-
-<img src="https://www.worldatlas.com/img/areamap/continent/caribbean_map.gif" alt="Caribbean Islands" >
-
-
-
-
+<br>
 <footer>
     <p>Posted by Stacie Ray</p>
     <p> August 1, 2019</p>
