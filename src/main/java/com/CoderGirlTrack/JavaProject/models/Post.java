@@ -13,13 +13,13 @@ public class Post {
     private int rating;
 
     //default constructor
-    public Post(){
+    public Post() {
         postIdCounter++;
         this.id = postIdCounter;
     }
 
-    public Post(int id, String userPost, String travelDate, String location, String destination, int rating){
-       //Updates static post counter variable by 1
+    public Post(int id, String userPost, String travelDate, String location, String destination, int rating) {
+        //Updates static post counter variable by 1
         postIdCounter++;
         //Sets post id to current post counter value
         this.id = postIdCounter;
@@ -32,7 +32,7 @@ public class Post {
     }
 
 
-    public int getId(){
+    public int getId() {
 
         return this.id;
     }
@@ -40,12 +40,13 @@ public class Post {
     public void setPostIdCounter(int postIdCounter) {
         this.id = id;
     }
+
     public String getProfileName() {
         return profileName.getProfileName();
     }
 
     public void setUser(UserProfile profileName) {
-    this.profileName = profileName;
+        this.profileName = profileName;
     }
 
     public String getuserPost() {
@@ -72,16 +73,21 @@ public class Post {
         this.location = location;
     }
 
-    public String getDestination() { return destination;}
+    public String getDestination() {
+        return destination;
+    }
 
-    public void setDestination(String destination) { this.destination = destination; }
+    public void setDestination(String destination) {
+        this.destination = destination;
+    }
 
     public int getRating() {
         return rating;
     }
 
     public void setEmail(int rating) {
-        this.rating = rating;}
+        this.rating = rating;
+    }
 
     //Method to override the built-in toString method
 
@@ -91,7 +97,8 @@ public class Post {
 
         return "Post number: " + this.id + "\n" +
 
-                this.content + "\n" +
+                this.userPost + "\n" +
 
-                "Written by: " + profileName.getUserName() + "\n" +
+                "Written by: " + profileName.getProfileName();
+    }
 }

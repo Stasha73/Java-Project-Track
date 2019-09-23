@@ -8,9 +8,9 @@
 <body>
 Please login into your account:
 <div>
-<form action="#" th:action="@{/login}" th:object="${login}" method="get">
-    <p>Profile Name : <input type="text" th:field="*{login.profileName}"/></p>
-    <p>Password : <input type="text" th:field="*{login.password}" /></p>
+<form action="#" th:action="@{/login}" th:object="${login}" method="GET">
+    <p>Profile Name : <input type="text" th:field="*{profileName}"/></p>
+    <p>Password : <input type="text" th:field="*{password}" /></p>
     <button type="submit">Submit</button>
 </form>
 </div>

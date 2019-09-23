@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 //mapping created for login
 @Controller
-@RequestMapping("/login.html ")
+@RequestMapping(" ")
 
 public class LoginController {
-    @GetMapping("")
+    @GetMapping("/login")
     public String displayLogin(Model model) {
         model.addAttribute("login",
                 new Login());
@@ -21,11 +21,12 @@ public class LoginController {
 
         return "login";
     }
-    @PostMapping("/login.html")
+    @PostMapping("/login")
     public String processLogin(@ModelAttribute Login login ){
         return "returning_users";
     }
-    @GetMapping("/login.html")
+
+    @GetMapping("")
     public String index (Model model){
         return displayLogin(model);
     }
