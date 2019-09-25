@@ -23,19 +23,21 @@ public class UserProfile {
     public UserProfile() {
     }
 
-    public UserProfile(int id, String profileName, String firstName, String lastName, String email) {
+    public UserProfile(int id, String profileName, String firstName, String lastName, String password,String email) {
 
         this.id = id;
         this.profileName = profileName;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.password = password;
         this.email = email;
     }
 
-    public UserProfile(String profileName, String firstName, String lastName, String email) {
+    public UserProfile(String profileName, String firstName, String lastName, String password, String email) {
         this.profileName = profileName;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.password = password;
         this.email = email;
     }
 
