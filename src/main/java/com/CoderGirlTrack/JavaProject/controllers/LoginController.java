@@ -8,27 +8,32 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-//mapping created for login
 @Controller
+
 @RequestMapping(" ")
 
 public class LoginController {
+
     @GetMapping("/login")
+
     public String displayLogin(Model model) {
+
         model.addAttribute("login",
+
                 new Login());
 
-
         return "login";
-    }
-    @PostMapping("/login")
-    public String processLogin(@ModelAttribute Login login ){
-        return "returning_users";
+
     }
 
-    @GetMapping("")
-    public String index (Model model){
-        return displayLogin(model);
+    @PostMapping(value = "/login")
+
+    public String processLogin(@ModelAttribute Login login ){
+
+        return "returning_users";
+
     }
 
 }
+
+

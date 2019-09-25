@@ -2,16 +2,16 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"; http-equiv="Content-Type" content="text/html">
-    <title th:text="${title}">Login Page</title>
+    <title>Title</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 Please login into your account:
 <div>
-<form action="#" th:action="@{/login}" th:object="${login}" method="GET">
+<form action="#" th:action="@{/login}" th:object="${login}" method="POST">
     <p>Profile Name : <input type="text" th:field="*{profileName}"/></p>
     <p>Password : <input type="text" th:field="*{password}" /></p>
-    <button type="submit">Submit</button>
+    <button type="login">Login</button>
 </form>
 </div>
 </body>

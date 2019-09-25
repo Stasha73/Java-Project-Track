@@ -1,26 +1,23 @@
 package com.CoderGirlTrack.JavaProject.models;
 
 public class Login {
-    private String profileName;
-    private String password;
+        private String profileName;
+        private String password;
 
-    public Login(){}
+        public String getProfileName(){
+            return profileName;
+        }
 
-    public Login(String profileName, String password){
-        this.profileName = profileName;
-        this.password = password;
+        public void setProfileName(String profileName){
+            this.profileName = profileName;
+        }
+        public String getPassword(){
+            return password;
+        }
+
+        public void setPassword(String password){
+            this.password = password;
+        }
+
     }
 
-    public String getProfileName(){
-        return profileName;
-    }
-    public void setProfileName(String profileName){
-        this.profileName = profileName;
-    }
-    public String getPassword(){
-        return password;
-    }
-    public void setPassword(String password){
-        this.password = password;
-    }
-}
