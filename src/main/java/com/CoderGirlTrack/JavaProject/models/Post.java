@@ -6,28 +6,28 @@ public class Post {
     private String userPost;
     private String travelDate;
     private String location;
-    private String destination;
+    private String activity;
     private int rating;
 
     public Post(){}
 
     public Post(int id, String userPost, String travelDate, String location,
-                String destination, int rating){
+                String activity, int rating){
 
         this.id = id;
         this.userPost = userPost;
         this.travelDate = travelDate;
         this.location = location;
-        this.destination = destination;
+        this.activity = activity;
         this.rating = rating;
     }
-    public Post (String userPost, String travelDate, String location, String destination,
+    public Post (String userPost, String travelDate, String location, String activity,
                  int rating)
     {
         this.userPost = userPost;
         this.travelDate = travelDate;
         this.location = location;
-        this.destination = destination;
+        this.activity = activity;
         this.rating = rating;
 
    }
@@ -61,10 +61,10 @@ public class Post {
     public void setLocation(String location) {
         this.location = location;
     }
-    public String getDestination() { return destination;}
+    public String getActivity() { return activity;}
 
-    public void setDestination(String destination) {
-        this.destination = destination;
+    public void setActivity(String activity) {
+        this.activity = activity;
     }
 
     public int getRating() {
