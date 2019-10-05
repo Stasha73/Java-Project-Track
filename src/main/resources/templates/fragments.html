@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+    <meta charset="UTF-8"; http-equiv="Content-Type" content="text/html">
+    <title th:text="${title}">Party of One</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+
+
+
+<body>
+<nav th:fragment="my-fragment1" class="header">
+    <a href="/register">Home</a>
+    <a href="/travel_tips">Travel Tips</a>
+    <a href="/contact">Contact</a>
+    <a href="/search">Search</a>
+</nav>
+
+</body>
+</html>

@@ -1,5 +1,7 @@
-package com.CoderGirlTrack.JavaProject.dao;
-/*import org.junit.Assert;
+package com.CoderGirlTrack.JavaProject.JavaProject.dao;
+import com.CoderGirlTrack.JavaProject.dao.UserProfileRowMapper;
+import com.CoderGirlTrack.JavaProject.models.UserProfile;
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.sql.ResultSet;
@@ -19,7 +21,7 @@ public class UserProfileRowMapperTests {
            ID  	PROFILE NAME  FIRST NAME  LAST NAME  EMAIL
            1    STASHA        STACIE      RAY        STASHARAY@YAHOO.COM
         */
-       /* ResultSet rs = mock(ResultSet.class);
+        ResultSet rs = mock(ResultSet.class);
         when(rs.getInt("id")).thenReturn(1);
         when(rs.getString("profile_Name")).thenReturn("Stasha");
         when(rs.getString("first_name")).thenReturn("Stacie");
@@ -27,10 +29,13 @@ public class UserProfileRowMapperTests {
         when(rs.getString("email")).thenReturn("stasharay@yahoo.com");
 
         //This is the call to the Row Mapper
-        mapped = new UserProfileRowMapper().mapRow(rs, 0);
+        UserProfile mapped = new UserProfileRowMapper().mapRow(rs, 0);
 
         //Here, we check the result to see if it worked!
-        Assert.assertEquals(3, mapped.getId());
-        Assert.assertEquals("Title", mapped.getTitle());
-        Assert.assertEquals("3838 Park Ave", mapped.getWebAddress());
-    }*/
+        Assert.assertEquals(mapped.getId(), 1);
+        Assert.assertEquals("profile_Name", mapped.getProfileName());
+        Assert.assertEquals("first_Name", mapped.getFirstName());
+        Assert.assertEquals("last_Name", mapped.getLastName());
+        Assert.assertEquals("Stasharay@yahhoo.com", mapped.getEmail());
+    }
+}

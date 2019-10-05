@@ -32,7 +32,7 @@ public class ProfileDao {
 
             System.out.println("Inserting " + userProfile);
 
-            jdbcTemplate.update("INSERT INTO travel.users(profilename, firstname, lastname, password, email,)" +
+            jdbcTemplate.update("INSERT INTO travel.users(profile_name, first_name, last_name, password, email,)" +
 
                             " VALUES (?,?,?,?,?)",
 

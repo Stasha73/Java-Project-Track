@@ -503,3 +503,9 @@ INSERT INTO TRAVEL.USERS VALUES (3, "Marshy", "Marchell", "Turner", "scorpio@yah
 2019-09-22 19:20:21 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO TRAVEL.USERS VALUES (1, 'stasha', 'stacie'.[*] 'ray', 'stasharay@yahoo.com')"; expected "[, ::, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
 INSERT INTO TRAVEL.USERS VALUES (1, 'stasha', 'stacie'. 'ray', 'stasharay@yahoo.com') [42001-197]
+2019-09-30 21:12:06 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELCT[*] * FROM TRAVER.USERS"; expected "SELECT, SET, SAVEPOINT, SCRIPT, SHUTDOWN, SHOW, {"; SQL statement:
+SELCT * FROM TRAVER.USERS [42001-197]
+2019-09-30 21:12:11 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELCT[*] * FROM TRAVER.USERS"; expected "SELECT, SET, SAVEPOINT, SCRIPT, SHUTDOWN, SHOW, {"; SQL statement:
+SELCT * FROM TRAVER.USERS [42001-197]

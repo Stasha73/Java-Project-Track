@@ -1,20 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8"; http-equiv="Content-Type" content="text/html">
-    <title th:text="${title}">Getting Started:</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-
-</head>
+<head th:replace="fragments :: head"></head>
 
 <header>
-   <nav>
-        <a href=" ">About</a>
-        <a href="/register/travel_tips">Travel Tips</a>
-        <a href="/search">Search</a>
-   </nav>
+    <nav th:replace="fragments :: my-fragment1"></nav>
 
-    <h1>Party of One Travels</h1>
+
+    <h1 class="party">Party of One Travels</h1>
 </header>
 <body>
 

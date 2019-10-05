@@ -8,7 +8,7 @@ import java.sql.SQLException;
 
 public class UserProfileRowMapper implements RowMapper {
 
-    public UserProfile mapRow(ResultSet resultSet, int unused) throws SQLException {
+    public UserProfile mapRow(ResultSet resultSet, int ignoreThis) throws SQLException {
 
         int id = resultSet.getInt("id");
         String profileName = resultSet.getString("profile_name");

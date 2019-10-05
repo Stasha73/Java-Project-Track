@@ -18,7 +18,7 @@ import javax.validation.Valid;
     @RequestMapping("")
 
 //Root path: /welcome
-    public class RegistrationController {
+    public class WelcomeController {
 
         @GetMapping("/register")
         public String displayUserProfile(Model model ) {
@@ -28,14 +28,16 @@ import javax.validation.Valid;
         }
 
         @PostMapping("/register")
-
         public String processUserProfile(@ModelAttribute @Valid UserProfile userProfile, Errors errors, Model model ) {
             if (errors.hasErrors()){
                 model.addAttribute("userProfile",
                         new UserProfile());
                 return "index";
         }
-            return "user_results";
+           else {
+                return "user_results";
+            }
+
 
        }
 
@@ -43,6 +45,7 @@ import javax.validation.Valid;
         public String index (Model model){
             return displayUserProfile(model);
         }
+
 
     }
 
