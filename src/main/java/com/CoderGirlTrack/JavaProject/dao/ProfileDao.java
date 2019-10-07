@@ -36,7 +36,7 @@ public class ProfileDao {
 
                             " VALUES (?,?,?,?,?)",
 
-                    userProfile.getProfileName(), userProfile.getFirstName(), userProfile.getLastName(), userProfile.getPassword(), userProfile.getEmail());
+                    userProfile.getProfileName(), userProfile.getFirstName(), userProfile.getLastName(), userProfile.getEmail());
         }
     }
 }

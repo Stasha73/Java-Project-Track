@@ -1,7 +1,7 @@
 package com.CoderGirlTrack.JavaProject.models;
 
 public class Login {
-        private String profileName;
+      private String profileName;
         private String password;
 
         public String getProfileName(){

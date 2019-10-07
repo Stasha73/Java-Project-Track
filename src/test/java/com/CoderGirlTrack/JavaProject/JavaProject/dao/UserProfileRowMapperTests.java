@@ -32,10 +32,10 @@ public class UserProfileRowMapperTests {
         UserProfile mapped = new UserProfileRowMapper().mapRow(rs, 0);
 
         //Here, we check the result to see if it worked!
-        Assert.assertEquals(mapped.getId(), 1);
+        Assert.assertEquals("id", mapped.getId());
         Assert.assertEquals("profile_Name", mapped.getProfileName());
         Assert.assertEquals("first_Name", mapped.getFirstName());
         Assert.assertEquals("last_Name", mapped.getLastName());
-        Assert.assertEquals("Stasharay@yahhoo.com", mapped.getEmail());
+        Assert.assertEquals("email", mapped.getEmail());
     }
 }
