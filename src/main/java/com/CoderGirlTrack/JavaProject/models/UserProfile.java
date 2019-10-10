@@ -12,11 +12,9 @@ public class UserProfile {
     private String firstName;
     @NotNull
     private String lastName;
-    //@NotNull
-   // @Size(min = 6, max = 15)
-   // private String password;
     @NotNull
     private String email;
+
 
     //data needed to create login profile
 

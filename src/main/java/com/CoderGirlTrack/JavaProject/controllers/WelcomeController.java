@@ -1,5 +1,6 @@
 package com.CoderGirlTrack.JavaProject.controllers;
 
+import com.CoderGirlTrack.JavaProject.models.Post;
 import com.CoderGirlTrack.JavaProject.models.UserProfile;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Controller;
@@ -26,7 +27,6 @@ import javax.validation.Valid;
                     new UserProfile());
             return "index";
         }
-
         @PostMapping("/register")
         public String processUserProfile(@ModelAttribute @Valid UserProfile userProfile, Errors errors, Model model ) {
             if (errors.hasErrors()){
@@ -37,15 +37,24 @@ import javax.validation.Valid;
            else {
                 return "user_results";
             }
-
-
        }
-
         @GetMapping("")
         public String index (Model model){
+
             return displayUserProfile(model);
         }
-
-
+    @GetMapping("/userPost")
+    public String displayPostPage(Model model) {
+        model.addAttribute("post",
+                new Post());
+        return "posts";
     }
+    @PostMapping("/userPost")
+    public String processPostPage(@ModelAttribute @Valid Post post, Errors errors, Model model) {
+            if (errors.hasErrors()){
+                model.addAttribute("post", new Post());
+            }
 
+        return "posts";
+    }
+}

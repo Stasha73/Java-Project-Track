@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: head"></head>
+<header>:
+    <nav th:replace="fragments :: my-fragment1"></nav>
+
+    <h1 class="party">Party of One Travels</h1>
+
+</header>
+<body>
+<p> In order to create a Post, please complete the information listed below: </p>
+
+<form th:action="@{/userPost}" th:object="${post}" method="post">
+
+    <p>Profile Name : <input th:field="*{profileName}" placeholder ="Profile Name" type="text"/></p>
+    <span th:: errors="*{profileName}" class="errors"></span>
+    <p>Travel Date   : <input  type="text" th:field="*{travelDate}" placeholder="Travel Date"/></p>
+    <span th:: errors="*{travelDate}" class="errors"></span>
+    <p>Location : <input type="text" th:field="*{location}" placeholder="Location"/></p>
+    <span th:: errors="*{location}" class="errors"></span>
+    <p> Activity : <input type="text" th:field="*{activity}" placeholder="Activity"/> </p>
+   <span th:: errors="*{activity}" class="errors"></span>
+    <p>Rating (1-5) :  <input type="text"  th:field="*{rating}" placeholder="Rating"/></p>
+    <span th:: errors="*{rating}" class="errors"></span>
+    <p>Post : <input th:field="*{userPost}" placeholder="Post" type="text"/></p>
+    <span th:: errors="*{userPost}" class="errors"></span>
+
+    <p><input type="submit" value="SUBMIT"/></p>
+
+</form>
+</body>
+</html>

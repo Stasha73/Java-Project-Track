@@ -15,7 +15,6 @@ public class UserProfileRowMapper implements RowMapper<UserProfile> {
         String profileName = resultSet.getString("profile_name");
         String firstName = resultSet.getString("first_name");
         String lastName = resultSet.getString("last_name");
-       // String password = resultSet.getString("password");
         String email = resultSet.getString("email");
 
         return new UserProfile(id, profileName, firstName, lastName, email );
