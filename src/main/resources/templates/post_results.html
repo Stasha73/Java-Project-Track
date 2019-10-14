@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: head"></head>
+<header>
+    <h1>Party of One Travels</h1>
+    <div th:replace="fragments :: my-fragment1"></div>
+</header>
+    <br>
+    <br>
+    <body>
+    <h2>User Posts</h2>
+    <p th:text="'Profile Name: ' + ${post.profileName}" />
+    <p th:text="'Travel Date: ' + ${post.travelDate}" />
+
+    <p th:text="'Location:   ' + ${post.location}" />
+    <p th:text="'Activity/Experience:  ' + ${post.activity}"/>
+    <p th:text="'Rating:  ' + ${post.rating}"/>
+    <p th:text="'Your Post:  ' + ${post.userPost}"/>
+    <!--<textarea> id= "myPost"
+    row= "5"
+    cols= "80"</textarea>-->
+
+
+    <a href="/userPost">Let's Create a Post</a>
+    <a href="/register">Return to Home Page</a>
+    </body>
+
+
+
+
+
+</html>

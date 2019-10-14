@@ -12,17 +12,20 @@
 
 <form th:action="@{/userPost}" th:object="${post}" method="post">
 
-    <p>Profile Name : <input th:field="*{profileName}" placeholder ="Profile Name" type="text"/></p>
+    <p>Profile Name : <input th:field="*{profileName}" placeholder ="6-15 characters" type="text"/></p>
     <span th:: errors="*{profileName}" class="errors"></span>
-    <p>Travel Date   : <input  type="text" th:field="*{travelDate}" placeholder="Travel Date"/></p>
+    <p>Travel Date   : <input type="datetime-local" th:field="*{travelDate}" placeholder="mm/dd/year"/></p>
     <span th:: errors="*{travelDate}" class="errors"></span>
-    <p>Location : <input type="text" th:field="*{location}" placeholder="Location"/></p>
+    <p>Location : <input type="text" th:field="*{location}" placeholder="city, state, country"/></p>
     <span th:: errors="*{location}" class="errors"></span>
-    <p> Activity : <input type="text" th:field="*{activity}" placeholder="Activity"/> </p>
+    <p> Activity/Experience : <input type="text" th:field="*{activity}" placeholder="resort, hotel, restaurant, etc.."/> </p>
    <span th:: errors="*{activity}" class="errors"></span>
-    <p>Rating (1-5) :  <input type="text"  th:field="*{rating}" placeholder="Rating"/></p>
+    <p>Rating (1-5) :  <input type="text"  th:field="*{rating}" placeholder="0-5"></p>
     <span th:: errors="*{rating}" class="errors"></span>
-    <p>Post : <input th:field="*{userPost}" placeholder="Post" type="text"/></p>
+
+    <p>  Post : <textarea th:field="*{userPost}" > id="myPost"
+        row="6" cols="80"
+         </textarea></p>
     <span th:: errors="*{userPost}" class="errors"></span>
 
     <p><input type="submit" value="SUBMIT"/></p>

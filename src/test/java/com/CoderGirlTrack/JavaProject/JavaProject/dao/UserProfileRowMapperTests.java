@@ -23,7 +23,7 @@ public class UserProfileRowMapperTests {
         */
         ResultSet rs = mock(ResultSet.class);
         when(rs.getInt("id")).thenReturn(1);
-        when(rs.getString("profile_Name")).thenReturn("Stasha");
+        when(rs.getString("profile_name")).thenReturn("Stasha");
         when(rs.getString("first_name")).thenReturn("Stacie");
         when(rs.getString("last_name")).thenReturn("Ray");
         when(rs.getString("email")).thenReturn("stasharay@yahoo.com");
@@ -32,10 +32,10 @@ public class UserProfileRowMapperTests {
         UserProfile mapped = new UserProfileRowMapper().mapRow(rs, 0);
 
         //Here, we check the result to see if it worked!
-        Assert.assertEquals("id", mapped.getId());
-        Assert.assertEquals("profile_Name", mapped.getProfileName());
-        Assert.assertEquals("first_Name", mapped.getFirstName());
-        Assert.assertEquals("last_Name", mapped.getLastName());
-        Assert.assertEquals("email", mapped.getEmail());
+        Assert.assertEquals(1, mapped.getId());
+        Assert.assertEquals("Stasha", mapped.getProfileName());
+        Assert.assertEquals("Stacie", mapped.getFirstName());
+        Assert.assertEquals("Ray", mapped.getLastName());
+        Assert.assertEquals("stasharay@yahoo.com", mapped.getEmail());
     }
 }
