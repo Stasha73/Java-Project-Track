@@ -9,12 +9,12 @@ import java.sql.SQLException;
 public class UserProfileRowMapper implements RowMapper<UserProfile> {
 
     public UserProfile mapRow(ResultSet resultSet, int ignoreThis) throws SQLException {
-      //  UserProfile userprofile = new UserProfile();
+      //  UserProfile userProfile = new UserProfile();
 
         int id = resultSet.getInt("id");
-        String profileName = resultSet.getString("profile_name");
-        String firstName = resultSet.getString("first_name");
-        String lastName = resultSet.getString("last_name");
+        String profileName = resultSet.getString("profileName");
+        String firstName = resultSet.getString("firstName");
+        String lastName = resultSet.getString("lastName");
         String email = resultSet.getString("email");
 
         return new UserProfile(id, profileName, firstName, lastName, email );

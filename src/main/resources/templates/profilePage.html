@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: head"></head>
+
+<header>
+    <nav th:replace="fragments :: my-fragment1"></nav>
+
+
+    <h1 class="party">Party of One Travels</h1>
+</header>
+
+<p> Visitors to the website can create a profile in order to post helpful tips.</p>
+<p> You can browse the list of travelers, search by categories or add new Posts to share with other travelers</p>
+<br>
+
+<p th:unless="${userProfile} and ${userProfile.size()}">Something went wrong. Unable to load profiles</p>
+<br/><br/>
+
+Number of Profiles currently in the system: <span th:text="${userProfile.size()}"></span>
+<ul>
+    <th:block th:each="userProfile: ${userProfile}"> <!--loops through all the profiles already in the system-->
+        <li>
+            <span th:text="${userProfile.profileName}"></span>/>
+            <a th:href="@{'/edit/' + ${userProfile.id}}">Edit</a>
+
+        <br>
+
+
+    </li>
+</th:block></ul>
+
+<p>  If your profile isn't listed above please create a new one</p>
+
+
+<h2 >Create User Profile</h2>
+<!-- creating a form to input user profile info
+<div>
+    form action="#" th:action="@{'/viewUser'} + ${userProfile.id} + edit}" th:object="${userProfile}" method="POST">
+
+    <p> Profile Name: <input type="text" th:field="*{profileName}"  placeholder="Profile Name"/></p>
+    <p> First Name:  <input type="text" th:field="*{firstName}" placeholder="First Name" /></p>
+    <p> Last Name:  <input type="text" th:field="*{lastName}" placeholder="Last Name" /></p>
+    <p> Email:  <input type="text" th:field="*{email}" /></p>
+    </form>
+</div>
+
+<div>
+    <form action="#" th:action="@{/new}" th:object="${userProfile}" method="POST">
+
+        <p>Profile Name : <input type="text" th:field="*{profileName}" /></p>
+        <span th:: errors="*{profileName}" class="errors"></span>
+        <p>First Name   : <input  type="text" th:field="*{firstName}" placeholder="First Name"/></p>
+        <span th:: errors="*{firstName}" class="errors"></span>
+        <p>Last Name : <input type="text" th:field="*{lastName}" placeholder="Last Name"/></p>
+        <span th:: errors="*{lastName}" class="errors"></span>
+
+        <p>Email   :  <input type="text"  th:field="*{email}" placeholder="Email" /></p>
+        <span th:: errors="*{email}" class="errors"></span>
+
+        <p><input type="submit" value="SUBMIT"/></p>
+        <br>
+        <br>
+
+
+    </form>
+</div>-->
+
+
+<a href="userPosts" input type="login">Enter A Post</a>
+<br>
+
+
+</body>
+</html>

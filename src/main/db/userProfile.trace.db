@@ -509,3 +509,102 @@ SELCT * FROM TRAVER.USERS [42001-197]
 2019-09-30 21:12:11 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELCT[*] * FROM TRAVER.USERS"; expected "SELECT, SET, SAVEPOINT, SCRIPT, SHUTDOWN, SHOW, {"; SQL statement:
 SELCT * FROM TRAVER.USERS [42001-197]
+2019-12-07 16:09:30 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE TRAVEL.POSTS (ID INT PRIMARY KEY AUTO_INCREMENT, PROFILE_NAME TEXT DEFAULT ' ', TRAVELDATE VARCHAR(255), LOCATION  VARCHAR(255) DEFAULT ' ', ACTIVITY VARCHAR(255) DEFAULT ' ', RATING INT, USERPOST VARCHAR(255) DEAULT[*] ' ', ENTRYDATE VARCHAR(255))"; expected "FOR, UNSIGNED, INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE TRAVEL.POSTS (ID INT PRIMARY KEY AUTO_INCREMENT, PROFILE_NAME TEXT DEFAULT ' ', TRAVELDATE VARCHAR(255), LOCATION  VARCHAR(255) DEFAULT ' ', ACTIVITY VARCHAR(255) DEFAULT ' ', RATING INT, USERPOST VARCHAR(255) DEAULT ' ', ENTRYDATE VARCHAR(255)) [42001-197]
+2019-12-07 16:11:01 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE TRAVEL.POSTS (ID INT PRIMARY KEY AUTO_INCREMENT, PROFILE_NAME TEXT DEFAULT ' ', TRAVELDATE VARCHAR(255), LOCATION  VARCHAR(255), ACTIVITY VARCHAR(255) DEFAULT,[*] RATING INT, USERPOST VARCHAR(255), ENTRYDATE VARCHAR(255))"; expected "NOT, EXISTS, INTERSECTS, SELECT, FROM, WITH"; SQL statement:
+CREATE TABLE TRAVEL.POSTS (ID INT PRIMARY KEY AUTO_INCREMENT, PROFILE_NAME TEXT DEFAULT ' ', TRAVELDATE VARCHAR(255), LOCATION  VARCHAR(255), ACTIVITY VARCHAR(255) DEFAULT, RATING INT, USERPOST VARCHAR(255), ENTRYDATE VARCHAR(255)) [42001-197]
+2019-12-07 16:29:38 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE TRAVEL.POST (ID INT PRIMARY KEY AUTO_INCREMENT,
+PROFILE_NAME TEXT DEFAULT ' ', 
+TRAVELDATE VARCHAR(255), 
+LOCATION  VARCHAR(255), 
+ACTIVITY VARCHAR(255), 
+RATING INT,
+USERPOST VARCHAR(255), 
+ENTRYDATE VARCHAR(255))
+
+INSERT[*] INTO TRAVEL.POST VALUES (1, STASHA, 11/20/2019, ARUBA, HILTON, 5, 'HAD A GREAT TIME. THE STAFF WAS INCREDIBLE', 12/07/2019)"; SQL statement:
+CREATE TABLE TRAVEL.POST (ID INT PRIMARY KEY AUTO_INCREMENT,
+PROFILE_NAME TEXT DEFAULT ' ', 
+TRAVELDATE VARCHAR(255), 
+LOCATION  VARCHAR(255), 
+ACTIVITY VARCHAR(255), 
+RATING INT,
+USERPOST VARCHAR(255), 
+ENTRYDATE VARCHAR(255))
+
+INSERT INTO TRAVEL.POST VALUES (1, STASHA, 11/20/2019, ARUBA, HILTON, 5, 'HAD A GREAT TIME. THE STAFF WAS INCREDIBLE', 12/07/2019) [42000-197]
+2019-12-07 16:29:39 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO TRAVEL.POST VALUES (2, BELL, 8/17/2016, MYRTLE BEACH[*], HOLIDAY INN, 4, 'THE WEATHER WAS EXTREMELY HOT. MAKE SURE YOU BRING PLENTY OF SUNSCREEN', 11/30/2019)"; expected "., (, [, ::, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+INSERT INTO TRAVEL.POST VALUES (2, BELL, 8/17/2016, MYRTLE BEACH, HOLIDAY INN, 4, 'THE WEATHER WAS EXTREMELY HOT. MAKE SURE YOU BRING PLENTY OF SUNSCREEN', 11/30/2019) [42001-197]
+2019-12-07 16:29:39 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO TRAVEL.POST VALUES (3, MARSHY, 7/04/2019, LAS VEGAS[*], HOOVER DAM, 5, 'THE HOOVER DAM TOUR WAS NOT ONLY INFORMATION I HAD A GOOD TIME', 10/26/2019)"; expected "., (, [, ::, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+INSERT INTO TRAVEL.POST VALUES (3, MARSHY, 7/04/2019, LAS VEGAS, HOOVER DAM, 5, 'THE HOOVER DAM TOUR WAS NOT ONLY INFORMATION I HAD A GOOD TIME', 10/26/2019) [42001-197]
+2019-12-07 16:29:47 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Column "STASHA" not found; SQL statement:
+INSERT INTO TRAVEL.POST VALUES (1, STASHA, 11/20/2019, ARUBA, HILTON, 5, 'HAD A GREAT TIME. THE STAFF WAS INCREDIBLE', 12/07/2019) [42122-197]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:357)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:150)
+	at org.h2.command.dml.Insert.prepare(Insert.java:314)
+	at org.h2.command.Parser.prepareCommand(Parser.java:283)
+	at org.h2.engine.Session.prepareLocal(Session.java:611)
+	at org.h2.engine.Session.prepareCommand(Session.java:549)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1247)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:217)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:1077)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1386)
+	at org.h2.server.web.WebApp.query(WebApp.java:1060)
+	at org.h2.server.web.WebApp.query(WebApp.java:1036)
+	at org.h2.server.web.WebApp.process(WebApp.java:223)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:170)
+	at org.h2.server.web.WebServlet.doGet(WebServlet.java:124)
+	at org.h2.server.web.WebServlet.doPost(WebServlet.java:161)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:853)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1587)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2019-12-07 16:29:47 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO TRAVEL.POST VALUES (2, BELL, 8/17/2016, MYRTLE BEACH[*], HOLIDAY INN, 4, 'THE WEATHER WAS EXTREMELY HOT. MAKE SURE YOU BRING PLENTY OF SUNSCREEN', 11/30/2019)"; expected "., (, [, ::, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+INSERT INTO TRAVEL.POST VALUES (2, BELL, 8/17/2016, MYRTLE BEACH, HOLIDAY INN, 4, 'THE WEATHER WAS EXTREMELY HOT. MAKE SURE YOU BRING PLENTY OF SUNSCREEN', 11/30/2019) [42001-197]
+2019-12-07 16:29:47 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO TRAVEL.POST VALUES (3, MARSHY, 7/04/2019, LAS VEGAS[*], HOOVER DAM, 5, 'THE HOOVER DAM TOUR WAS NOT ONLY INFORMATION I HAD A GOOD TIME', 10/26/2019)"; expected "., (, [, ::, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+INSERT INTO TRAVEL.POST VALUES (3, MARSHY, 7/04/2019, LAS VEGAS, HOOVER DAM, 5, 'THE HOOVER DAM TOUR WAS NOT ONLY INFORMATION I HAD A GOOD TIME', 10/26/2019) [42001-197]
