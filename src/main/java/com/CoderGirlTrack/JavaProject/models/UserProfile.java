@@ -35,9 +35,11 @@ public class UserProfile {
         this.profileName = profileName;
         this.firstName = firstName;
         this.lastName = lastName;
-       //this.password = password;
         this.email = email;
     }
+    //getters & setters are used for retrieving and updating the value of a variable
+    //getter returns the value of the attribute
+    //setter method takes a parameter & assigns it to the attribute
 
     public int getId() {
         return id;
@@ -90,7 +92,7 @@ public class UserProfile {
     @Override
 
     public String toString() {
-        return "Username: " + this.profileName + "\n" +
+        return "Profile Name: " + this.profileName + "\n" +
                 "First Name: " + this.firstName + "\n" +
                 "Last Name: " + this.lastName + "\n" +
                 "Email Address: " + this.email + "\n";

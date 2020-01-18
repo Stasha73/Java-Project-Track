@@ -22,29 +22,34 @@ Number of Profiles currently in the system: <span th:text="${userProfile.size()}
         <li>
             <span th:text="${userProfile.profileName}"></span>/>
             <a th:href="@{'/edit/' + ${userProfile.id}}">Edit</a>
+            <a th:href="@{'/deleteUser/' + ${userProfile.id}}">Delete</a>
 
         <br>
 
 
     </li>
-</th:block></ul>
+</th:block>
+</ul>
 
 <p>  If your profile isn't listed above please create a new one</p>
 
+<a href="/new">Create User Profile></a>
 
-<h2 >Create User Profile</h2>
-<!-- creating a form to input user profile info
+<!--<p>< type="submit" value="Create User Profile"/></p>
+
+ creating a form to input user profile info>
 <div>
-    form action="#" th:action="@{'/viewUser'} + ${userProfile.id} + edit}" th:object="${userProfile}" method="POST">
 
-    <p> Profile Name: <input type="text" th:field="*{profileName}"  placeholder="Profile Name"/></p>
-    <p> First Name:  <input type="text" th:field="*{firstName}" placeholder="First Name" /></p>
-    <p> Last Name:  <input type="text" th:field="*{lastName}" placeholder="Last Name" /></p>
+    <form action="#" th:action="@{/addUser}" th:object="${userProfile}" method="post">
+
+    <p> Profile Name: <input type="text" th:field="*{profileName}"  /></p>
+    <p> First Name:  <input type="text" th:field="*{firstName}" /></p>
+    <p> Last Name:  <input th:field="*{lastName}" type="text"/></p>
     <p> Email:  <input type="text" th:field="*{email}" /></p>
+    <p><input type="submit" value="Submit" /> <input type="reset" value="Reset"/></p>
     </form>
 </div>
-
-<div>
+div>
     <form action="#" th:action="@{/new}" th:object="${userProfile}" method="POST">
 
         <p>Profile Name : <input type="text" th:field="*{profileName}" /></p>
@@ -70,5 +75,5 @@ Number of Profiles currently in the system: <span th:text="${userProfile.size()}
 <br>
 
 
-</body>
+</a>
 </html>

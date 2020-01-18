@@ -41,9 +41,9 @@ import javax.validation.constraints.Size;
             this.entryDate = entryDate;
             this.keyword = keyword;
         }
-        public TravelPost(String profileName, String travelDate, String location, String activity,
-                          int rating, String userPost, String entryDate, String keyword)
-        {
+        public TravelPost (String profileName, String travelDate, String location,
+                           String activity, int rating, String userPost, String entryDate, String keyword){
+
             this.profileName = profileName;
             this.travelDate = travelDate;
             this.location = location;
@@ -54,6 +54,9 @@ import javax.validation.constraints.Size;
             this.keyword = keyword;
 
         }
+        //getters & setters are used for retrieving and updating the value of a variable
+        //getter returns the value of the attribute
+        //setter method takes a parameter & assigns it to the attribute
         public int getId(){
             return id;
         }

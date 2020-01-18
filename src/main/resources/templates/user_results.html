@@ -2,22 +2,27 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments :: head"></head>
 
+<header>
     <nav th:replace="fragments :: my-fragment1"></nav>
-</head>
+    <h1 class="party">Party of One Travels</h1>
+</header>
+
 <br>
 <br>
 <body>
+<h2>Successfully Added New User: <span th:text="${userProfile}" />!</h2>
+<p>Number of profiles currently in the system: <span th:text="${count}" />.</p>
+
 <h2>Please review information</h2>
-<form action="/new" method="Post">
+
+<form th:action="@{/addUser}" th:object="${UserProfile}" method="POST">
 <p th:text="'Profile Name: ' + ${userProfile.profileName}" />
 <p th:text="'First and Last Name: ' + ${userProfile.firstName} + ${userProfile.lastName}" />
-<!--
-<p th:text="'Password:  ' + ${userProfile.password}" />-->
 <p th:text="'Email:   ' + ${userProfile.email}" />
 <br>
 
-<a href="/userPost">Let's Create a Post</a>
-<a href="/register">Return to Home Page</a>
+<a href="/userPosts">Let's Create a Post</a>
+<a href="/about">Return to Home Page</a>
 </form>
 </body>
 </html>

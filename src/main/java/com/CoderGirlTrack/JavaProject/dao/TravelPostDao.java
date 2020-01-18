@@ -15,32 +15,35 @@ public class TravelPostDao {
     JdbcTemplate jdbcTemplate;
 
 
-    public List<UserProfile> getAll() {
+    public List<TravelPost> getAll() {
         return jdbcTemplate.query("SELECT * from  travel.posts", new UserPostRowMapper());
 
     }
 
-    public void addPost(TravelPost userPost) {
-        System.out.println("Inserting" + userPost);
-        jdbcTemplate.update("INSERT INTO travel.posts(id, profileName, firstName, lastName, email,)" +
+    public void addPost(TravelPost travelPost) {
+        System.out.println("Inserting" + travelPost);
+        jdbcTemplate.update("INSERT INTO travel.posts(id, profileName, travelDate, location, activity, rating, " +
+                        "userPost, entryDate, keyword)  VALUES (?,?,?,?,?)",
 
-                        " VALUES (?,?,?,?,?)",
-
-                usePost.getId(), userProfile.getProfileName(), userProfile.getFirstName(), userProfile.getLastName(), userProfile.getEmail());
+                travelPost.getId(), travelPost.getProfileName(),travelPost.getTravelDate(), travelPost.getLocation(), travelPost.getActivity(),
+                travelPost.getRating(), travelPost.getUserPost(), travelPost.getEntryDate(), travelPost.getKeyword());
     }
 
-    public void updateUser(int id, UserProfile userProfile) {
-        System.out.println("Updating" + userProfile);
-        jdbcTemplate.update("UPDATE travel.users SET profileName=?, firstName=?, lastName=?, email=? where id=?" +
-                userProfile.getProfileName(), userProfile.getFirstName(), userProfile.getLastName(), id, userProfile.getEmail());
+    public void updateUser(int id, TravelPost travelPost) {
+        System.out.println("Updating" + travelPost);
+        jdbcTemplate.update("UPDATE travel.posts SET profileName=?, travelDate=?, location=?, activity=?, rating=?, userPost=?, " +
+                "entryDate=?, keyword=? where id=?" +
+
+                travelPost.getProfileName(), travelPost.getTravelDate(), travelPost.getLocation(), travelPost.getActivity(),
+                travelPost.getRating(), travelPost.getUserPost(), travelPost.getEntryDate(), travelPost.getKeyword(), id);
 
 
     }
 
-    public UserProfile findById(int id) {
-        List<UserProfile> matches = jdbcTemplate.query("SELECT * from travel.users where id= ?",
+    public TravelPost findById(int id) {
+        List<TravelPost> matches = jdbcTemplate.query("SELECT * from travel.posts where id= ?",
                 new Object[]{id},
-                new UserProfileRowMapper());
+                new UserPostRowMapper());
         if (matches.isEmpty()) {
             return null;
         }
@@ -49,3 +52,5 @@ public class TravelPostDao {
         }
     }
 }
+
+

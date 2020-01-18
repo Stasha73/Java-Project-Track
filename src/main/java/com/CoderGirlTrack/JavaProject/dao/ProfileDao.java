@@ -15,26 +15,35 @@ public class ProfileDao {
     @Autowired
     JdbcTemplate jdbcTemplate;
 
-
+    //lists all the profiles stored in SQL
     public List<UserProfile> getAll() {
         return jdbcTemplate.query("SELECT * from  travel.users", new UserProfileRowMapper());
 
     }
 
+    //method created to add additional profiles
     public void addUser(UserProfile userProfile) {
         System.out.println("Inserting" + userProfile);
-        jdbcTemplate.update("INSERT INTO travel.users(id, profileName, firstName, lastName, email,)" +
+        jdbcTemplate.update("INSERT INTO travel.users( profileName, firstName, lastName, email,)" +
 
-                        " VALUES (?,?,?,?,?)",
+                        " VALUES (?,?,?,?)",
 
-                userProfile.getId(), userProfile.getProfileName(), userProfile.getFirstName(), userProfile.getLastName(), userProfile.getEmail());
+                userProfile.getProfileName(), userProfile.getFirstName(), userProfile.getLastName(), userProfile.getEmail());
     }
 
+    //method created to update profiles
     public void updateUser(int id, UserProfile userProfile) {
         System.out.println("Updating" + userProfile);
         jdbcTemplate.update("UPDATE travel.users SET profileName=?, firstName=?, lastName=?, email=? where id=?" +
-                userProfile.getProfileName(), userProfile.getFirstName(), userProfile.getLastName(), id, userProfile.getEmail());
+                userProfile.getProfileName(), userProfile.getFirstName(), userProfile.getLastName(), userProfile.getEmail(), id);
 
+
+    }
+    //method to delete profile
+    public void deleteUser ( UserProfile userProfile){
+        System.out.println("Deleting" + userProfile);
+        jdbcTemplate.update("DELETE FROM travel.users (profileName, firstName, lastName, email,) VALUES (?,?,?,?)",
+                userProfile.getProfileName(), userProfile.getFirstName(), userProfile.getLastName(), userProfile.getEmail());
 
     }
 
@@ -44,50 +53,13 @@ public class ProfileDao {
                 new UserProfileRowMapper());
         if (matches.isEmpty()) {
             return null;
-        }
-        else {
+        } else {
             return matches.get(0);
         }
+
     }
 }
 
 
 
-      /*  try {
-checks to see if there's a duplicate user
-            jdbcTemplate.queryForObject("SELECT email FROM travel.users WHERE profileName = ?",
-
-                    new Object[]{userProfile.getProfileName()}, String.class);
-
-        } catch (EmptyResultDataAccessException ex) {
-
-
-            System.out.println("Inserting " + userProfile);
-
-
-    }
-
-
-
-    public UserProfile findById(int id) {
-
-        List<UserProfile> matches = jdbcTemplate.query("SELECT * FROM travel.users WHERE id=?",
-
-                new Object[] { id },
-
-                new UserProfileRowMapper());
-
-        if(matches.isEmpty()) {
-
-            return null;
-
-        }
-
-        else {
-
-            return matches.get(0);
-
-        }
-
-*/
 

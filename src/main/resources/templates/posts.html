@@ -10,7 +10,7 @@
 <body>
 <p> In order to create a Post, please complete the information listed below: </p>
 
-<form th:action="@{/userPost}" th:object="${post}" method="post">
+<form th:action="@{/travelPost}" th:object="${TravelPost}" method="POST">
 
     <p>Profile Name : <input th:field="*{profileName}" placeholder ="6-15 characters" type="text"/></p>
     <span th:: errors="*{profileName}" class="errors"></span>
@@ -24,7 +24,7 @@
     <span th:: errors="*{rating}" class="errors"></span>
 
     <p>  Post : <textarea th:field="*{userPost}" > id="myPost"
-        row="6" cols="80"
+        row="8" cols="80"
          </textarea></p>
     <span th:: errors="*{userPost}" class="errors"></span>
 
