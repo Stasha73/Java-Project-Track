@@ -34,16 +34,17 @@ public class ProfileDao {
     //method created to update profiles
     public void updateUser(int id, UserProfile userProfile) {
         System.out.println("Updating" + userProfile);
-        jdbcTemplate.update("UPDATE travel.users SET profileName=?, firstName=?, lastName=?, email=? where id=?" +
+        jdbcTemplate.update("UPDATE travel.users SET profileName=?, firstName=?, lastName=?, email=? where id=?" ,
                 userProfile.getProfileName(), userProfile.getFirstName(), userProfile.getLastName(), userProfile.getEmail(), id);
 
 
     }
     //method to delete profile
-    public void deleteUser ( UserProfile userProfile){
+    public void deleteUser (int id, UserProfile userProfile){
         System.out.println("Deleting" + userProfile);
-        jdbcTemplate.update("DELETE FROM travel.users (profileName, firstName, lastName, email,) VALUES (?,?,?,?)",
-                userProfile.getProfileName(), userProfile.getFirstName(), userProfile.getLastName(), userProfile.getEmail());
+        jdbcTemplate.update("DELETE FROM travel.users (profileName, firstName, lastName, email,) " +
+                "VALUES (?,?,?,?)",
+                userProfile.getProfileName(), userProfile.getFirstName(), userProfile.getLastName(), userProfile.getEmail(), id);
 
     }
 

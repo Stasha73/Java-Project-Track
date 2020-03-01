@@ -37,7 +37,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
     @RequestMapping(value = "/viewUser", method = GET)
     public String viewUserProfile(Model model) {
         List<UserProfile> userProfiles = profileDao.getAll();
-        model.addAttribute(("userProfile"),  userProfiles);
+        model.addAttribute(("userProfiles"),  userProfiles);
         model.addAttribute("count", userProfiles.size());
 
         return "profilePage.html";
@@ -50,7 +50,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 
     @RequestMapping(value = "/addUser", method = POST)
-    public String AddNewUser(Model model, @RequestParam String profileName,
+    public String addNewUser(Model model, @RequestParam String profileName,
                              @RequestParam String firstName,
                              @RequestParam String lastName,
                              @RequestParam String email) {
@@ -63,53 +63,68 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
         profileDao.addUser(new UserProfile(-1, profileName, firstName, lastName, email));
 
-        return "confirmSavedUser(model)";
+        return confirmSavedUser(model);
     }
+
     @RequestMapping(value = "/addUser", method = GET)
     public String confirmSavedUser(Model model){
-        List<UserProfile> userProfile = profileDao.getAll();
-        model.addAttribute(userProfile);
-        model.addAttribute(userProfile.size());
+        List<UserProfile> userProfiles = profileDao.getAll();
+        model.addAttribute("userProfiles", userProfiles);
+        model.addAttribute("count", userProfiles.size());
 
-        return "user.results.html";
+        return "user_results.html";
 
 }
+/*displays object data into form  for the given id.
+The @PathVariable puts URL data into variable
+ */
     @RequestMapping(value="/edit/{id}", method=GET)
     public String viewUser(Model model, @PathVariable int id) {
         UserProfile userProfile = profileDao.findById(id);
-        model.addAttribute(userProfile);
+        model.addAttribute("userProfile",  userProfile);
 
         return "profilePageEdit.html";
     }
 
     //allows you to edit user profile and redirect back to the profile page
     @RequestMapping(value="/edit/{id}", method=POST)
-    public String editUser(@ModelAttribute UserProfile userProfile, @PathVariable int id) {
+    public String editUser(@ModelAttribute  UserProfile userProfile, @PathVariable int id) {
         profileDao.updateUser(id, userProfile);
         return "redirect:/viewUser";
 
     }
-    @RequestMapping(value="/deleteUser/{id}", method=POST)
-    public String deleteUser(Model model, @RequestParam String profileName,
-                           @RequestParam String firstName,
-                             @RequestParam String lastName,
-                             @RequestParam String email){
-        model.addAttribute("profileName" , profileName);
-        model.addAttribute("firstName", firstName);
-        model.addAttribute("lastName", lastName);
-        model.addAttribute("email", email);
-        profileDao.deleteUser(new UserProfile(profileName, firstName, lastName, email));
-        return "deleteUser(model)";
+
+    @RequestMapping(value = "/deleteUser/{id}", method = GET)
+    public String confirmDeletedUser(Model model, @PathVariable int id) {
+        UserProfile userProfile = profileDao.findById(id);
+        model.addAttribute("userProfile", userProfile);
+                return "profilePageDelete";
     }
+
+    @RequestMapping(value="/deleteUser/{id}", method=POST)
+    public String deleteUser(@ModelAttribute UserProfile userProfile, @PathVariable int id) {
+        profileDao.deleteUser( id, userProfile);
+        return "redirect:/viewUser";
+
+
+    }
+
     @RequestMapping(value="/tips", method=GET)
     public String displayTravelTipsPage(Model model){
         return "travel_tips.html";
     }
+
     @RequestMapping(value="/contact", method=GET)
     public String displayContactPage(){
         return "contact.html";
     }
+
+    @RequestMapping(value="/search", method=GET)
+    public String  displaySearchPage(){
+        return "searchPage.html";
+    }
 }
+
 
 
 

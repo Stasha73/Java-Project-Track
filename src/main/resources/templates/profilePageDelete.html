@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: head"></head>
+
+<header>
+    <nav th:replace="fragments :: my-fragment1"></nav>
+    <h1 class="party">Party of One Travels</h1>
+</header>
+
+
+<body>
+<h2>Edit Profile Details:</h2>
+<form method="POST" th:action="@{'/deleteUser/' + ${userProfile.id}}" th:object="${userProfile}">
+
+    <table class="center">
+
+        <tr>
+            <td>Profile Name: </td>
+            <td><input name="profileName" type="text" th:field="*{profileName}"/></td>
+
+        </tr>
+
+        <tr>
+            <td>First Name: </td>
+            <td><input name="firstName" type="text" th:field="*{firstName}"/></td>
+
+        </tr>
+
+        <tr>
+            <td>Last Name: </td>
+            <td><input name="lastName" type="text" th:field="*{lastName}"/></td>
+
+        </tr>
+
+        <tr>
+
+            <td>Email: </td>
+            <td><input name="email" type="text" th:field="*{email}"/></td>
+
+        </tr>
+
+    </table>
+    <
+    <input type="submit" value="Delete Profile Information">
+
+
+</form>
+
+
+</body>
+</html>

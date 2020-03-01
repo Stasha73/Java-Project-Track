@@ -13,14 +13,14 @@
 <p> You can browse the list of travelers, search by categories or add new Posts to share with other travelers</p>
 <br>
 
-<p th:unless="${userProfile} and ${userProfile.size()}">Something went wrong. Unable to load profiles</p>
+<p th:unless="${userProfiles} and ${userProfiles.size()}">Something went wrong. Unable to load profiles</p>
 <br/><br/>
 
-Number of Profiles currently in the system: <span th:text="${userProfile.size()}"></span>
+Number of Profiles currently in the system: <span th:text="${userProfiles.size()}"></span>
 <ul>
-    <th:block th:each="userProfile: ${userProfile}"> <!--loops through all the profiles already in the system-->
+    <th:block th:each="userProfile: ${userProfiles}"> <!--loops through all the profiles already in the system-->
         <li>
-            <span th:text="${userProfile.profileName}"></span>/>
+            <span th:text="${userProfile.profileName}"></span>
             <a th:href="@{'/edit/' + ${userProfile.id}}">Edit</a>
             <a th:href="@{'/deleteUser/' + ${userProfile.id}}">Delete</a>
 
@@ -33,7 +33,13 @@ Number of Profiles currently in the system: <span th:text="${userProfile.size()}
 
 <p>  If your profile isn't listed above please create a new one</p>
 
-<a href="/new">Create User Profile></a>
+<a href="/new">Create User Profile</a>
+<a href="userPosts" input type="login">Enter A Post</a>
+<br>
+
+
+</a>
+</html>
 
 <!--<p>< type="submit" value="Create User Profile"/></p>
 
@@ -71,9 +77,3 @@ div>
 </div>-->
 
 
-<a href="userPosts" input type="login">Enter A Post</a>
-<br>
-
-
-</a>
-</html>

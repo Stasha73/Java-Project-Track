@@ -15,14 +15,34 @@
 
 <h2>Please review information</h2>
 
-<form th:action="@{/addUser}" th:object="${UserProfile}" method="POST">
+<!--form th:action="@{/addUser}" th:object="${UserProfile}" method="POST">
 <p th:text="'Profile Name: ' + ${userProfile.profileName}" />
 <p th:text="'First and Last Name: ' + ${userProfile.firstName} + ${userProfile.lastName}" />
-<p th:text="'Email:   ' + ${userProfile.email}" />
+<p th:text="'Email:   ' + ${userProfile. email}"/-->
 <br>
+<table class="center">
+<tr>
+    <td>Profile Name: </td>
+    <td th:text="${profileName}"></td>
+</tr>
+<tr>
+    <td>First Name: </td>
+    <td th:text="${firstName}"></td>
+</tr>
+    <tr>
+        <td>Last Name: </td>
+        <td th:text="${lastName}"></td>
+    </tr>
+<tr>
+    <td>Email</td>
+    <td th:text="${email}"></td>
+</tr>
+
+
+</table>
 
 <a href="/userPosts">Let's Create a Post</a>
 <a href="/about">Return to Home Page</a>
-</form>
+</--form>
 </body>
 </html>
