@@ -10,7 +10,7 @@
 
 <body>
 <h2>Edit Profile Details:</h2>
-<form method="POST" th:action="@{'/deleteUser/' + ${userProfile.id}}" th:object="${userProfile}">
+<form method="POST" th:action="@{'/edit' + ${userProfile.id}}" th:object="${userProfile}">
 
     <table class="center">
 
@@ -40,12 +40,8 @@
         </tr>
 
     </table>
-    <
-    <input type="submit" value="Delete Profile Information">
-
-
+    <input type="submit" value="Save">
 </form>
-
-
 </body>
+
 </html>
